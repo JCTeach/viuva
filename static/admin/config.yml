@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: JCTeach/viuva
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+local_backend: true
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Rascunho", name: "draft", widget: "boolean", default: false }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
